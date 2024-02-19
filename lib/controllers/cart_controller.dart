@@ -80,7 +80,7 @@ class CartController extends GetxController {
       grandTotal.value = 0;
       cart.clear();
       Get.back();
-      Get.snackbar("Message", "Transaction succeed ! ",
+      Get.snackbar("Thông báo", "Thanh toán thành công ! ",
           colorText: Colors.white,
           backgroundColor: Color(0xff4D4D4D),
           snackPosition: SnackPosition.BOTTOM);

@@ -97,7 +97,7 @@ class CartScreen extends StatelessWidget {
 
   void _confirmationDialog() {
     Get.defaultDialog(
-      title: "Really want to proceed ?",
+      title: "Tổng hoá đơn",
       actions: [
         ElevatedButton(
             style: ButtonStyle(
@@ -105,7 +105,7 @@ class CartScreen extends StatelessWidget {
             onPressed: () {
               Get.back();
             },
-            child: Text("Cancel")),
+            child: Text("Huỷ")),
         ElevatedButton(
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.yellow)),
@@ -113,7 +113,7 @@ class CartScreen extends StatelessWidget {
               controller.transactionCompleted();
             },
             child: Text(
-              "Confirm",
+              "Đồng ý",
               style: TextStyle(color: Colors.black),
             ))
       ],
@@ -149,9 +149,8 @@ class CartScreen extends StatelessWidget {
                         fontSize: 13),
                   ),
                   subtitle: Text(
-                    "\$. " +
                         NumberFormat.currency(decimalDigits: 0, symbol: '')
-                            .format(controller.cart[index].price) +
+                            .format(controller.cart[index].price) + " vnđ" +
                         " x " +
                         controller.cart[index].qty.toString(),
                     style: TextStyle(
@@ -165,30 +164,30 @@ class CartScreen extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
+          // Text(
+          //   controller.userSession["name"],
+          //   style: TextStyle(
+          //       color: Colors.white,
+          //       fontWeight: FontWeight.bold,
+          //       fontSize: 14),
+          // ),
+          // SizedBox(
+          //   height: 5,
+          // ),
+          // Text(
+          //   controller.userSession["email"],
+          //   style: TextStyle(
+          //       color: Colors.white,
+          //       fontWeight: FontWeight.bold,
+          //       fontSize: 14),
+          // ),
+          // SizedBox(
+          //   height: 5,
+          // ),
           Text(
-            controller.userSession["name"],
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 14),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            controller.userSession["email"],
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 14),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            "Total \$. " +
+            "Tổng tiền: " +
                 NumberFormat.currency(decimalDigits: 0, symbol: '')
-                    .format(controller.grandTotal.value),
+                    .format(controller.grandTotal.value) + " vnđ",
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
