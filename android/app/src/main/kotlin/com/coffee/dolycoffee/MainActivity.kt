@@ -1,4 +1,4 @@
-package com.example.dolycoffee
+package com.coffee.dolycoffee
 
 import io.flutter.embedding.android.FlutterActivity
 
